@@ -1,0 +1,81 @@
+@import "_variables.scss";
+
+// MIXIN
+
+@mixin heading-primary {
+  font-size: 4rem;
+  font-family: $fraunces;
+  line-height: 4.932rem;
+  font-weight: 900;
+  margin-bottom: 3.2rem;
+
+}
+
+@mixin description {
+  font-size: 1.8rem;
+  font-family: $barlow;
+  line-height: 3rem;
+  margin-bottom: 4rem;
+}
+
+@mixin learn-more {
+  font-family: $fraunces;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: $txt-black;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-left: 0.85rem;
+}
+
+@mixin underline-yell {
+  content: "";
+  width: 13.7rem;
+  height: 10px;
+  background-color: hsla(51, 100%, 49%, 0.25);
+  border-radius: 26px;
+  bottom: -3px;
+  left: -13px;
+  position: absolute;
+  z-index: -1;
+  
+}
+
+@mixin underline-red {
+  content: "";
+  width: 13.7rem;
+  height: 10px;
+  background-color: hsla(7, 99%, 70%, 0.25);
+  border-radius: 26px;
+  bottom: -3px;
+  left: -13px;
+  position: absolute;
+  z-index: -1;
+  
+}
+
+/* MEDIA QUERIES */
+
+@mixin st {
+  @media screen and (max-width: #{$st-breakpoint}) {
+    @content
+  };
+}
+
+@mixin nd {
+  @media screen and (max-width: #{$nd-breakpoint}) {
+    @content
+  };
+}
+
+@mixin rd {
+  @media screen and (max-width: #{$rd-breakpoint}) {
+    @content
+  };
+}
+
+@mixin th {
+  @media screen and (max-width: #{$th-breakpoint}) {
+    @content
+  };
+}

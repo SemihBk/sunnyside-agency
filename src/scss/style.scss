@@ -1,4 +1,5 @@
 @import "_variables.scss";
+@import "_mixin.scss";
 
 * {
   margin: 0;
@@ -13,11 +14,16 @@ html {
 body {
   font-family: $barlow;
 
+  /******************/
+  /* SECTION HEADER */
+  /******************/
+
+
   .header {
     background: url("../../img/image-header.jpg");
-    background-position: center;
+    background-position: bottom;
     background-size: cover;
-    height: 100vh;
+    height: 80rem;
     padding: 3.4rem 4.8rem 0;
 
     position: relative;
@@ -51,9 +57,18 @@ body {
         .nav-last-link:visited {
           padding: 1.6rem 3rem 1.5rem 3.2rem;
           background-color: #fff;
-          border-radius: 20px;
+          border-radius: 28px;
           font-size: 2.5rem;
           color: #000;
+          font-weight: bold;
+          font-family: $fraunces;
+
+          transition: all 0.3s;
+        }
+
+        .nav-last-link:hover {
+          background-color: #ffffff40;
+          color: #fff;
         }
       }
     }
@@ -68,6 +83,9 @@ body {
       top: 19.5rem;
       left: 50%;
       transform: translateX(-50%);
+      letter-spacing: 0.875rem;
+      width: 100%;
+      text-align: center;
     }
 
     .arrow-down {
@@ -78,42 +96,340 @@ body {
     }
   }
 
-  .footer {
+  /****************/
+  /* SECTION INFO */
+  /****************/
+
+  .section-info {
     display: flex;
     flex-direction: column;
-    gap: 5rem;
     
-    align-items: center;
-    background-color: $bg-footer;
-  
-    padding: 7.2rem 57.2rem;
 
-    .logo {
-      fill: $title-footer;
-    }
+    .article-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
 
-    .footer-link:link,
-    .footer-link:active,
-    .footer-look:visited {
-      display: flex;
-      align-items: center;
+      @include rd {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        
+      }
+
+      .text-box {
+        justify-self: center;
+        align-self: center;
+
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+
+        padding-left: 16.5rem;
+        padding-right: 10.6rem;
+
+        @include st {
+          padding-left: 11.5rem;
+          padding-right: 8.6rem;
+        }
+
+        @include nd {
+          padding-left: 4.5rem;
+          padding-right: 3.6rem;
+        }
+
+        @include rd {
+          grid-row: 2 / 3;
+          padding-left: 8.5rem;
+          padding-right: 14.6rem;
+        }
 
 
-      a{
-      text-decoration: none;
-      font-size: 1.8rem;
-      color: $link-footer;
+        .text-box:last-child {
+          padding-right: 16.5rem;
+          padding-left: 10.6rem;
+
+        }
+
+        .heading-primary {
+          @include heading-primary
+          
+        }
+
+        .description {
+          @include description
+        }
+
+        .learn-more:link {
+          @include learn-more;
+
+          position: relative;
+          z-index: 9;
+
+          
+        }
+
+        .underline-yell::after {
+          @include underline-yell;
+          transition: all 0.3s;
+        }
+
+        .underline-red::after {
+          @include underline-red;
+          transition: all 0.3s;
+        }
+
+        .underline-yell:hover::after {
+          @include underline-yell;
+          background-color: #fad400;
+        }
+
+        .underline-red:hover::after {
+          @include underline-red;
+          background-color: #FE7766;
+        }
+      }
+      
+      .img-info {
+        width: 100%;
+        grid-row: 1 / 2;
       }
     }
 
-    
+  }
+  /**********************/
+  /* INFO SECTION STATIC*/
+  /**********************/
+
+  .section-info-static {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @include rd {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      
+    }
+
+    article {
+      position: relative;
+
+      aside {
+        text-align: center;
+        position: absolute;
+        bottom: 5.9rem;
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: 33.9rem;
+
+        @include rd {
+          grid-row: 1 / 2;
+          
+        }
+
+        h4 {
+          font-family: $fraunces;
+          font-size: 2.8rem;
+          font-weight: 900;
+          line-height: 3.5rem;
+          letter-spacing: -0.020rem;
+          text-align: center;
+          margin-bottom: 2.7rem;
+        }
+
+        p {
+          font-family: $barlow;
+          font-size: 1.6rem;
+          font-weight: 600;
+          line-height: 2.7rem;
+          letter-spacing: -0.0114rem;
+          text-align: center;
+          color: $txt-static;
+        }
+
+        .titre-graphicDesign {
+          color: $txt-graphic-design;
+        }
+        
+        .titre-photography {
+          color: $txt-photography;
+          mix-blend-mode: normal;
+          opacity: 0.75;
+        }
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+
+
+
+      }
+    }
+
+
+  }
+
+  /************************/
+  /* CLIENTS TESTIMONIALS */
+  /************************/
+
+  .testimonials {
+    padding: 16rem;
+    text-align: center;
+
+    @include st {
+      padding: 10rem;
+    }
+
+    h5 {
+      font-family: $fraunces;
+      font-weight: 900;
+      font-size: 2rem;
+      letter-spacing: 0.5rem;
+      color: $txt-grey-sm;
+      margin: auto;
+      margin-bottom: 8.1rem;
+      text-transform: uppercase;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      gap: 3rem;
+
+      @include th {
+        flex-direction: column;
+        gap: 11rem;
+      }
+
+      li {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        
+        img {
+          width: 7.2rem;
+          height: 7.2rem;
+          border-radius: 50%;
+          margin-bottom: 5.8rem;
+
+          @include th {
+            margin-bottom: 3.2rem;
+          }
+        }
+
+        p {
+          font-family: Barlow;
+          font-size: 1.8rem;
+          font-weight: 600;
+          line-height: 3.2rem;
+          letter-spacing: -0.0128rem;
+          color: $txt-grey-lg;
+          margin-bottom: 6.9rem;
+
+          @include th {
+            margin-bottom: 3.2rem;
+          }
+        }
+
+        figcaption {
+          display:flex;
+          flex-direction: column;
+          font-family: $fraunces;
+          font-size: 1.8rem;
+          font-weight: 900;
+          letter-spacing: -0.013rem;
+          line-height: 2.219rem;
+          color: $txt-black;
+
+          cite {
+            font-family: $barlow;
+            font-weight: 600;
+            font-size: 1.4rem;
+            letter-spacing: -0.01rem;
+            line-height: 2.5rem;
+            color: $txt-grey-sm;
+
+          }
+        }
+      }
+    }
+  }
+
+  /*******************/
+  /* SECTION GALLERY */
+  /*******************/
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  /******************/
+  /* SECTION FOOTER */
+  /******************/
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+  
+    align-items: center;
+    background-color: $bg-footer;
+  
+    padding: 7.2rem;
+    margin: auto;
+
+    .logo-green {
+      width: 17.4rem;
+      margin-bottom: 4rem;
+    }
+        
+      
+      
+      .footer--link {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 5.7rem;
+      margin-bottom: 8.8rem;
+
+      .footer-link:link, .footer-link:active, .footer-link:visited {
+        text-decoration: none;
+        font-size: 1.8rem;
+        color: $link-footer;
+        transition: all 0.3s;
+      }
+
+      .footer-link:hover {
+        color: #fff;
+      }
+    }
 
     .footer-socialmedia-logo {
       display: flex;
       align-items: center;
       gap: 2.8rem;
+
+      .icon {
+
+        svg {
+          fill: #2C7566;
+          transition: all 0.3s;
+        }
+
+        svg:hover {
+          fill: #fff;
+        }
+      }
+
+      
+      
       
     }
-
   }
 }
