@@ -61,12 +61,7 @@ body {
         }
 
         input[type="checkbox"]:checked ~ .main-nav-list {
-          transform: translate(-250%, 0);
-
-          height: initial;
-          width: 100%;
-
-
+          transform: translate(-50%, 0);
           transition: 1s ease;
         }
 
@@ -105,19 +100,14 @@ body {
           padding: 3.9rem 0 5.4rem;
           position: absolute;
           top: 7.2rem;
-          left: 250%;
-          /* transform: translate(-50%, 0); */
+          left: 50%;
+          transform: translate(-50%, -150%);
 
           flex-direction: column;
-          z-index: 100;
+          z-index: 1;
 
-         /*  width: 100%; */
+          width: 100%;
 
-           width: 0;
-           height: 0;
-
-
-           
 
           .triangle {
             position: absolute;
@@ -341,22 +331,28 @@ body {
     article {
       position: relative;
 
-      aside {
-        text-align: center;
-        position: absolute;
-        bottom: 5.9rem;
-        left: 50%;
-        transform: translateX(-50%);
+      
 
-        width: 33.9rem;
+      aside {
+        
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+
+          width: 100%;
+          padding-bottom: 5.9rem;
+          padding-left: 19.1rem;
+          padding-right: 19rem;
 
         @include rd {
           grid-row: 1 / 2;
         }
 
         @include sixth {
-          width: 55.8rem;
-          bottom: 10rem;
+          padding-bottom: 5.9rem;
+          padding-left: 19.1rem;
+          padding-right: 19rem;
         }
 
         h4 {
@@ -396,8 +392,9 @@ body {
           mix-blend-mode: normal;
           opacity: 0.75;
         }
+      
       }
-
+      
       img {
         height: 100%;
         width: 100%;
