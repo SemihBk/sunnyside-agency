@@ -228,6 +228,7 @@ body .section-info .article-info .text-box {
   body .section-info .article-info .text-box {
     padding-left: 2.4rem;
     padding-right: 2.4rem;
+    align-items: center;
   }
 }
 body .section-info .article-info .text-box .text-box:last-child {
@@ -265,6 +266,7 @@ body .section-info .article-info .text-box .learn-more:link {
   text-transform: uppercase;
   text-decoration: none;
   margin-left: 0.85rem;
+  width: fit-content;
   position: relative;
   z-index: 9;
 }
@@ -376,16 +378,26 @@ body .section-info-static article aside {
   padding-left: 19.1rem;
   padding-right: 19rem;
 }
+@media screen and (max-width: 1200px) {
+  body .section-info-static article aside {
+    padding-bottom: 3rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+}
 @media screen and (max-width: 950px) {
   body .section-info-static article aside {
     grid-row: 1/2;
+    padding-bottom: 5.9rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
   }
 }
 @media screen and (max-width: 500px) {
   body .section-info-static article aside {
-    padding-bottom: 5.9rem;
-    padding-left: 19.1rem;
-    padding-right: 19rem;
+    padding-bottom: 1Orem;
+    padding-left: 4.1rem;
+    padding-right: 4rem;
   }
 }
 body .section-info-static article aside h4 {

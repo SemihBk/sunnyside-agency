@@ -216,6 +216,7 @@ body {
       .text-box {
         justify-self: center;
         align-self: center;
+        
 
         display: flex;
         flex-direction: column;
@@ -244,6 +245,8 @@ body {
         @include fifth {
           padding-left: 2.4rem;
           padding-right: 2.4rem;
+
+          align-items: center;
         }
 
 
@@ -331,8 +334,6 @@ body {
     article {
       position: relative;
 
-      
-
       aside {
         
           position: absolute;
@@ -345,14 +346,27 @@ body {
           padding-left: 19.1rem;
           padding-right: 19rem;
 
+        @include st {
+          padding-bottom: 3rem;
+          padding-left: 8rem;
+          padding-right: 8rem;
+
+          }
+
         @include rd {
           grid-row: 1 / 2;
+
+          padding-bottom: 5.9rem;
+          padding-left: 8rem;
+          padding-right: 8rem;
+
         }
 
         @include sixth {
-          padding-bottom: 5.9rem;
-          padding-left: 19.1rem;
-          padding-right: 19rem;
+          padding-bottom: 1Orem;
+          padding-left: 4.1rem;
+          padding-right: 4rem;
+
         }
 
         h4 {
