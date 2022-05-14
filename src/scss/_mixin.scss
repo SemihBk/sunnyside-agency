@@ -39,6 +39,10 @@
   position: absolute;
   z-index: -1;
   
+  @media screen and (max-width: #{$fifth-breakpoint}) {
+    left: 50%;
+    transform: translateX(-50%);
+  };
 }
 
 @mixin underline-red {
@@ -52,6 +56,10 @@
   position: absolute;
   z-index: -1;
   
+  @media screen and (max-width: #{$fifth-breakpoint}) {
+    left: 50%;
+    transform: translateX(-50%);
+  };
 }
 
 /* MEDIA QUERIES */
@@ -79,3 +87,16 @@
     @content
   };
 }
+
+@mixin fifth {
+  @media screen and (max-width: #{$fifth-breakpoint}) {
+    @content
+  };
+}
+
+@mixin sixth {
+  @media screen and (max-width: #{$sixth-breakpoint}) {
+    @content
+  };
+}
+
