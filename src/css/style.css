@@ -123,6 +123,12 @@ body .header .navbar .main-nav-list .main-nav-link:visited {
   text-decoration: none;
   font-size: 1.8rem;
   color: #ffffff;
+  transition: all 0.3s;
+}
+body .header .navbar .main-nav-list .main-nav-link:link:hover,
+body .header .navbar .main-nav-list .main-nav-link:active:hover,
+body .header .navbar .main-nav-list .main-nav-link:visited:hover {
+  color: #24303e;
 }
 @media screen and (max-width: 800px) {
   body .header .navbar .main-nav-list .main-nav-link:link,
@@ -156,7 +162,7 @@ body .header .navbar .main-nav-list .nav-last-link:visited {
 }
 body .header .navbar .main-nav-list .nav-last-link:hover {
   background-color: rgba(255, 255, 255, 0.2509803922);
-  color: #fff;
+  color: #fff !important;
 }
 @media screen and (max-width: 800px) {
   body .header .navbar .main-nav-list .nav-last-link:hover {
@@ -460,7 +466,7 @@ body .testimonials {
     padding: 6.4rem 2.4rem 8.6rem;
   }
 }
-body .testimonials h5 {
+body .testimonials h4 {
   font-family: "Fraunces", serif;
   font-weight: 900;
   font-size: 2rem;
