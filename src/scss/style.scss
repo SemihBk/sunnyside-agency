@@ -436,6 +436,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    .testimonials-title {
+      font-size: 3rem;
+      margin-bottom: 4rem;
+      text-transform: uppercase;
+    }
 
     @include st {
       padding: 10rem;
